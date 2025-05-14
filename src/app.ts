@@ -31,6 +31,9 @@ export async function createApp() {
   app.use(express.json());
 
   // Routes
+  app.get("/", (req, res) => {
+    res.send("Welcome");
+  });
   app.use("/api/categories", categoryRoutes);
   app.use("/api/sub-categories", subCategoryRoutes);
   app.use("/api/duas", duaRoutes);
