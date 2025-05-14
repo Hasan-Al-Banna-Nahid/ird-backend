@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const dua_controller_1 = require("../controllers/dua.controller");
+const router = (0, express_1.Router)();
+router.get("/", dua_controller_1.DuaController.getDuas);
+router.get("/category/:cat_id", dua_controller_1.DuaController.getDuasByCategory);
+router.get("/sub-category/:subcat_id", dua_controller_1.DuaController.getDuasBySubCategory);
+router.get("/:id", dua_controller_1.DuaController.getDuaById);
+exports.default = router;
